@@ -1,0 +1,230 @@
+/*This is the styling for all body as well as html part*/
+html,
+body {
+  color: white;
+  padding: 0px;
+  /*background: #034f84;*/
+  background: linear-gradient(to bottom left, #003399 34%, #0099cc 107%);
+  font-family: sans-serif;
+  overflow-y: hidden;
+}
+/*Header Styling*/
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  padding: 20px;
+  margin-top: 3px;
+}
+.navbutton {
+  border: 2px solid white;
+  padding: 7px 15px;
+  font-size: 0.9rem;
+}
+/*Display1 part stands for initial Brand name display*/
+.display1 {
+  display: block;
+  background-image: url("../assets/images/logo2.gif");
+  height: 15%;
+  width: 5%;
+  margin: auto;
+  margin-left: 20%;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+/*Display2 part stands for home page details display*/
+.display2 {
+  display: none;
+}
+/*Spliting home page into left and right*/
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+}
+/*Left side of home*/
+.left {
+  -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s, height 4s;
+  left: 0;
+  width: 100%;
+}
+/*Right side of home*/
+.right {
+  right: 0;
+  width: 0%;
+  overflow-y: hidden;
+}
+/*Center aligned content on left*/
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 27%;
+  width: 70%;
+  transform: translate(-25%, -50%);
+  text-align: left;
+}
+.inputEmail {
+  color: white;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  width: 80%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+h1 {
+  font-weight: 20px;
+  font-size: 4vw;
+}
+/*Video Styling*/
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+  object-fit: fill;
+}
+i {
+  padding: 5px;
+}
+/*Footer Styling*/
+footer {
+  width: 100%;
+  position: absolute;
+  margin-top: 40%;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+.ftleft {
+  padding-left: 5%;
+  float: left;
+}
+.ftright {
+  margin-top: 10px;
+  padding: 1%;
+  float: right;
+}
+.ftright a i {
+  padding: 15px;
+}
+.op {
+  opacity: 0.5;
+}
+
+.ftleftadd {
+  padding-left: 2%;
+}
+.ftrightadd {
+  margin-top: 2%;
+  margin-right: 5%;
+}
+.dots {
+  position: absolute;
+  bottom: 0;
+}
+/*Text/Content Reavealing animation*/
+:root {
+  --animation-delay: 0;
+  --duration: 800ms;
+  --iterations: 1;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.reveal,
+.reveal::after {
+  animation-delay: 0;
+  animation-delay: var(--animation-delay, 100ms);
+  animation-iteration-count: 1;
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: 800ms;
+  animation-duration: var(--duration, 800ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.reveal,
+#change {
+  position: relative;
+  font-size: 3vw;
+  animation-name: text;
+  color: #fff;
+  white-space: nowrap;
+  cursor: default;
+  text-transform: uppercase;
+}
+
+.reveal::after {
+  content: "";
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #024779;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+  animation-name: revealer;
+}
+.rev {
+  font-size: 12px !important;
+}
+@keyframes text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes revealer {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
